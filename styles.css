@@ -1,0 +1,52 @@
+#board{
+  margin: 30px;
+  perspective: 1000;
+  position: relative;
+}
+
+.tile{
+  transition: 0.6s;
+	transform-style: preserve-3d;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+
+}
+
+.front, .back{
+  backface-visibility: hidden;
+  position: absolute;
+  /*top: 0;
+	left: 0;*/
+  width: 20px;
+  height: 20px;
+}
+
+.front{
+  background-color: gray;
+/*  z-index: 1;*/
+  transform: rotateY(0deg);
+}
+
+.back.flagged{
+  background-color: magenta;
+  transform: rotateY(180deg);
+}
+
+.front:hover{
+  background-color: blue;
+}
+
+.back{
+  background-color: green;
+  transform: rotateY(180deg);
+}
+
+.back.bombed{
+  background-color: red;
+  transform: rotateY(180deg);
+}
+
+.tile.flipped{
+  transform: rotateY(180deg);
+}
